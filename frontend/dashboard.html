@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>Student Information Management System • Dashboard</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Loading animation overlay -->
+  <div id="globalLoader" class="loader-overlay">
+    <div class="futuristic-spinner"></div>
+  </div>
+
+  <!-- Top Navigation -->
+  <header class="top-nav glass">
+    <div class="nav-brand">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      <span class="system-title">G S Kadendegeri • Students</span>  
+    </div>
+    <div class="nav-meta">
+      <div class="admin-profile glass">
+        <span class="admin-avatar" role="img" aria-label="Admin">👤</span>
+        <span class="admin-name">Admin</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <!-- Summary Cards -->
+    <section class="summary-grid" id="summaryCards">
+      <div class="glass-card summary-card" data-type="total">
+        <div class="card-icon">🧑‍🎓</div>
+        <div class="card-info">
+          <h3 id="totalStudentsCount">0</h3>
+          <p>Total Students</p>
+        </div>
+      </div>
+      <div class="glass-card summary-card" data-type="male">
+        <div class="card-icon">♂️</div>
+        <div class="card-info">
+          <h3 id="maleCount">0</h3>
+          <p>Male</p>
+        </div>
+      </div>
+      <div class="glass-card summary-card" data-type="female">
+        <div class="card-icon">♀️</div>
+        <div class="card-info">
+          <h3 id="femaleCount">0</h3>
+          <p>Female</p>
+        </div>
+      </div>
+      <div class="glass-card summary-card" data-type="departments">
+        <div class="card-icon">🏛️</div>
+        <div class="card-info">
+          <h3 id="departmentCount">0</h3>
+          <p>Departments</p>
+        </div>
+      </div>
+      <div class="glass-card summary-card" data-type="years">
+        <div class="card-icon">📆</div>
+        <div class="card-info">
+          <h3 id="yearCount">2026</h3>
+          <p>Academic Year</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts Section (pure HTML/CSS/JS placeholder charts) -->
+    <section class="charts-row">
+      <div class="glass-card chart-box">
+        <h4>📊 Gender Distribution</h4>
+        <div class="bar-chart" id="genderChart">
+          <div class="bar male-bar" id="maleBar" style="height: 0%;">Male</div>
+          <div class="bar female-bar" id="femaleBar" style="height: 0%;">Female</div>
+        </div>
+        <div class="chart-legend"><span>♂️ Male</span> <span>♀️ Female</span></div>
+      </div>
+      <div class="glass-card chart-box">
+        <h4>📚 Department Distribution</h4>
+        <div id="deptChartContainer" class="dept-pie">⏳</div>
+        <div id="deptLegend" class="chart-legend"></div>
+      </div>
+    </section>
+
+    <!-- Recent Students & Quick Actions -->
+    <div class="bottom-grid">
+      <div class="glass-card recent-students">
+        <h4>🕒 Recent Students</h4>
+        <ul id="recentStudentList" class="recent-list">
+          <li class="empty-hint">No students yet</li>
+        </ul>
+      </div>
+      <div class="quick-actions glass-card">
+        <h4>⚡ Quick Actions</h4>
+        <button class="glow-btn" onclick="window.location.href='students.html'">➕ Add Student</button>
+        <button class="glow-btn secondary" onclick="window.location.href='students.html'">📋 View Students</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="js/dashboard.js"></script>
+  <script src="js/api.js"></script>
+</body>
+</html>
