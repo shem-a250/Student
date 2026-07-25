@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const multer = require("multer");
+require("dotenv").config();
 
 const { connectDB, Student } = require("./db");
 

@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 // Connect to MongoDB
 async function connectDB() {
     try {
-        await mongoose.connect("mongodb://127.0.0.1:27017/StudentMTS");
+        await mongoose.connect(process.env.MONGODB_URI);
 
-        console.log("✅ MongoDB Connected Successfully");
+        console.log("✅ MongoDB Atlas Connected Successfully");
     } catch (err) {
         console.error("❌ Database Connection Failed:", err.message);
         process.exit(1);
