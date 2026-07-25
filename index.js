@@ -9,8 +9,7 @@ const { connectDB, Student } = require("./db");
 const app = express();
 const PORT = 3000;
 
-// Connect to MongoDB
-connectDB();
+
 
 // Middleware
 app.use(cors());
@@ -357,6 +356,12 @@ app.get("/students/search", async (req, res) => {
 // START SERVER
 // ==================================
 
-app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}`);
-});
+async function startServer() {
+    await connectDB();
+
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on port ${PORT}`);
+    });
+}
+
+startServer();
